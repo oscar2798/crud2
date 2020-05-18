@@ -31,7 +31,7 @@
 </head>
 <body>
 	<div class="contenedor">
-		<h2>CRUD EN PHP CON MYSQL</h2>
+		<h2>CRUD EN PHP CON POSTGRESQL</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="buscar nombre o apellidos" 

@@ -56,7 +56,7 @@
 </head>
 <body>
 	<div class="contenedor">
-		<h2>CRUD EN PHP CON MYSQL</h2>
+		<h2>CRUD EN PHP CON POSRGRESQL</h2>
 		<form action="" method="post">
 			<div class="form-group">
 				<input type="text" name="nombre" value="<?php if($resultado) echo $resultado['nombre']; ?>" class="input__text">
