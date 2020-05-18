@@ -1,12 +1,12 @@
 <?php
 	$database="crud";
-	$user='root';
-	$password='';
+	$user='postgres';
+	$password='empacadorandroid';
 
 
 try {
 	
-	$con=new PDO('mysql:host=localhost;dbname='.$database,$user,$password);
+	$con=new PDO('pgsql:host=34.94.12.209;dbname='.$database,$user,$password);
 
 } catch (PDOException $e) {
 	echo "Error".$e->getMessage();
