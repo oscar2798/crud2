@@ -4,19 +4,17 @@
 	if(isset($_POST['guardar'])){
 		$nombre=$_POST['nombre'];
 		$apellidos=$_POST['apellidos'];
-		$telefono=$_POST['telefono'];
 		$ciudad=$_POST['ciudad'];
 		$correo=$_POST['correo'];
 
-		if(!empty($nombre) && !empty($apellidos) && !empty($telefono) && !empty($ciudad) && !empty($correo) ){
+		if(!empty($nombre) && !empty($apellidos) && !empty($ciudad) && !empty($correo) ){
 			if(!filter_var($correo,FILTER_VALIDATE_EMAIL)){
 				echo "<script> alert('Correo no valido');</script>";
 			}else{
-				$consulta_insert=$con->prepare('INSERT INTO clientes(nombre,apellidos,telefono,ciudad,correo) VALUES(:nombre,:apellidos,:telefono,:ciudad,:correo)');
+				$consulta_insert=$con->prepare('INSERT INTO clientes(nombre,apellidos,ciudad,correo) VALUES(:nombre,:apellidos,:ciudad,:correo)');
 				$consulta_insert->execute(array(
 					':nombre' =>$nombre,
 					':apellidos' =>$apellidos,
-					':telefono' =>$telefono,
 					':ciudad' =>$ciudad,
 					':correo' =>$correo
 				));
@@ -46,7 +44,6 @@
 				<input type="text" name="apellidos" placeholder="Apellidos" class="input__text">
 			</div>
 			<div class="form-group">
-				<input type="text" name="telefono" placeholder="Teléfono" class="input__text">
 				<input type="text" name="ciudad" placeholder="Ciudad" class="input__text">
 			</div>
 			<div class="form-group">

@@ -45,7 +45,6 @@
 				<td>Id</td>
 				<td>Nombre</td>
 				<td>Apellidos</td>
-				<td>Teléfono</td>
 				<td>Ciudad</td>
 				<td>Correo</td>
 				<td colspan="2">Acción</td>
@@ -55,7 +54,6 @@
 					<td><?php echo $fila['id']; ?></td>
 					<td><?php echo $fila['nombre']; ?></td>
 					<td><?php echo $fila['apellidos']; ?></td>
-					<td><?php echo $fila['telefono']; ?></td>
 					<td><?php echo $fila['ciudad']; ?></td>
 					<td><?php echo $fila['correo']; ?></td>
 					<td><a href="update.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>

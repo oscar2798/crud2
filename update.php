@@ -17,19 +17,17 @@
 	if(isset($_POST['guardar'])){
 		$nombre=$_POST['nombre'];
 		$apellidos=$_POST['apellidos'];
-		$telefono=$_POST['telefono'];
 		$ciudad=$_POST['ciudad'];
 		$correo=$_POST['correo'];
 		$id=(int) $_GET['id'];
 
-		if(!empty($nombre) && !empty($apellidos) && !empty($telefono) && !empty($ciudad) && !empty($correo) ){
+		if(!empty($nombre) && !empty($apellidos) && !empty($ciudad) && !empty($correo) ){
 			if(!filter_var($correo,FILTER_VALIDATE_EMAIL)){
 				echo "<script> alert('Correo no valido');</script>";
 			}else{
 				$consulta_update=$con->prepare(' UPDATE clientes SET  
 					nombre=:nombre,
 					apellidos=:apellidos,
-					telefono=:telefono,
 					ciudad=:ciudad,
 					correo=:correo
 					WHERE id=:id;'
@@ -37,7 +35,6 @@
 				$consulta_update->execute(array(
 					':nombre' =>$nombre,
 					':apellidos' =>$apellidos,
-					':telefono' =>$telefono,
 					':ciudad' =>$ciudad,
 					':correo' =>$correo,
 					':id' =>$id
@@ -66,7 +63,6 @@
 				<input type="text" name="apellidos" value="<?php if($resultado) echo $resultado['apellidos']; ?>" class="input__text">
 			</div>
 			<div class="form-group">
-				<input type="text" name="telefono" value="<?php if($resultado) echo $resultado['telefono']; ?>" class="input__text">
 				<input type="text" name="ciudad" value="<?php if($resultado) echo $resultado['ciudad']; ?>" class="input__text">
 			</div>
 			<div class="form-group">
